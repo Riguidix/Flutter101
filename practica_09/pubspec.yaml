@@ -77,15 +77,15 @@ flutter:
   fonts:
     - family: Karla
       fonts:
-        - asset: fonts/Karla/static/Karla-Regular.ttf
+        - asset: fonts/Karla/Karla-Regular.ttf
           weight: 400
-        - asset: fonts/Karla/static/Karla-Medium.ttf
+        - asset: fonts/Karla/Karla-Medium.ttf
           weight: 500
-        - asset: fonts/Karla/static/Karla-SemiBold.ttf
+        - asset: fonts/Karla/Karla-SemiBold.ttf
           weight: 600
-        - asset: fonts/Karla/static/Karla-Bold.ttf
+        - asset: fonts/Karla/Karla-Bold.ttf
           weight: 700
-        - asset: fonts/Karla/static/Karla-ExtraBold.ttf
+        - asset: fonts/Karla/Karla-ExtraBold.ttf
           weight: 800
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
