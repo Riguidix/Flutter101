@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         spacing: 100.0,
         children: [
-          /* Text(
+          Text(
             "${leftDice + rightDice}",
             style: TextStyle(
               color: Colors.white,
@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
               fontWeight: FontWeight.w900,
               letterSpacing: 1.2,
             ),
-          ), */
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             spacing: 20.0,
@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
 
-          /* ElevatedButton(
+          ElevatedButton(
             onPressed: rollDice,
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.green,
@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
             ),
             child: const Text("Tirar Dados", style: TextStyle(fontSize: 20.0)),
-          ), */
+          ),
         ],
       ),
     );
