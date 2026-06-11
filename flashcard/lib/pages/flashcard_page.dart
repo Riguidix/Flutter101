@@ -1,11 +1,54 @@
+import 'dart:math';
+
 import 'package:flashcard/components/action_button.dart';
 import 'package:flutter/material.dart';
 
-class FlashCardPage extends StatelessWidget {
+class FlashCardPage extends StatefulWidget {
   const FlashCardPage({super.key});
 
   @override
+  State<FlashCardPage> createState() => _FlashCardPageState();
+}
+
+class _FlashCardPageState extends State<FlashCardPage> {
+  @override
   Widget build(BuildContext context) {
+    List<String> palabrasFavoritas = [];
+    List<String> palabrasAleatorias = [
+      'Mariposa',
+      'Reloj',
+      'Caminar',
+      'Nube',
+      'Guitarra',
+      'Azul',
+      'Ventana',
+      'Sonrisa',
+      'Bosque',
+      'Espejo',
+      'Saltar',
+      'Pájaro',
+      'Libro',
+      'Río',
+      'Estrella',
+      'Arena',
+      'Gato',
+      'Montaña',
+      'Fuego',
+      'Sombrero',
+      'Cuchara',
+      'Viento',
+      'Tren',
+      'Zapato',
+      'Luna',
+      'Pintura',
+      'Relámpago',
+      'Sol',
+      'Canción',
+      'Tierra',
+    ];
+
+    int random = Random().nextInt(palabrasAleatorias.length);
+
     return Scaffold(
       backgroundColor: Colors.teal,
       body: SafeArea(
@@ -16,7 +59,7 @@ class FlashCardPage extends StatelessWidget {
 
             Center(
               child: Text(
-                "Palabra aleatoria",
+                palabrasAleatorias[random],
                 style: const TextStyle(
                   fontSize: 42,
                   fontWeight: FontWeight.w600,
@@ -33,7 +76,14 @@ class FlashCardPage extends StatelessWidget {
               children: [
                 ActionButton(action: () {}, icon: Icons.favorite),
 
-                ActionButton(action: () {}, icon: Icons.refresh),
+                ActionButton(
+                  action: () {
+                    setState(() {
+                      random = Random().nextInt(palabrasAleatorias.length);
+                    });
+                  },
+                  icon: Icons.refresh,
+                ),
 
                 ActionButton(action: () {}, icon: Icons.list),
               ],
