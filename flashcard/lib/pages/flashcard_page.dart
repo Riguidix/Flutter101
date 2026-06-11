@@ -1,3 +1,4 @@
+import 'package:flashcard/components/action_button.dart';
 import 'package:flutter/material.dart';
 
 class FlashCardPage extends StatelessWidget {
@@ -30,38 +31,11 @@ class FlashCardPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: 25.0,
               children: [
-                OutlinedButton(
-                  onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    shape: const CircleBorder(),
-                    side: const BorderSide(color: Colors.white, width: 2),
-                    padding: const EdgeInsets.all(20),
-                    foregroundColor: Colors.white,
-                  ),
-                  child: Icon(Icons.favorite, size: 32),
-                ),
+                ActionButton(action: () {}, icon: Icons.favorite),
 
-                OutlinedButton(
-                  onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    shape: const CircleBorder(),
-                    side: const BorderSide(color: Colors.white, width: 2),
-                    padding: const EdgeInsets.all(20),
-                    foregroundColor: Colors.white,
-                  ),
-                  child: Icon(Icons.refresh, size: 32),
-                ),
+                ActionButton(action: () {}, icon: Icons.refresh),
 
-                OutlinedButton(
-                  onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    shape: const CircleBorder(),
-                    side: const BorderSide(color: Colors.white, width: 2),
-                    padding: const EdgeInsets.all(20),
-                    foregroundColor: Colors.white,
-                  ),
-                  child: Icon(Icons.list, size: 32),
-                ),
+                ActionButton(action: () {}, icon: Icons.list),
               ],
             ),
 
