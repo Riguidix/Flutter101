@@ -12,11 +12,14 @@ class ActionButton extends StatelessWidget {
       onPressed: action,
       style: OutlinedButton.styleFrom(
         shape: const CircleBorder(),
-        side: const BorderSide(color: Colors.white, width: 2),
+        side: const BorderSide(color: Colors.blueGrey, width: 2),
         padding: const EdgeInsets.all(20),
+        backgroundColor: Colors.teal,
         foregroundColor: Colors.white,
+        elevation: 55,
+        shadowColor: Colors.blueGrey,
       ),
-      child: Icon(icon, size: 32),
+      child: Icon(icon, size: 44),
     );
   }
 }

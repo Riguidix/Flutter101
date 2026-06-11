@@ -1,7 +1,8 @@
 import 'dart:math';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:flashcard/components/action_button.dart';
-import 'package:flutter/material.dart';
 
 class FlashCardPage extends StatefulWidget {
   const FlashCardPage({super.key});
@@ -14,36 +15,36 @@ class _FlashCardPageState extends State<FlashCardPage> {
   late int random;
   late List<String> palabrasFavoritas;
   List<String> palabrasAleatorias = [
-    'Mariposa',
-    'Reloj',
-    'Caminar',
-    'Nube',
-    'Guitarra',
-    'Azul',
-    'Ventana',
-    'Sonrisa',
-    'Bosque',
-    'Espejo',
-    'Saltar',
-    'Pájaro',
-    'Libro',
-    'Río',
-    'Estrella',
-    'Arena',
-    'Gato',
-    'Montaña',
-    'Fuego',
-    'Sombrero',
-    'Cuchara',
-    'Viento',
-    'Tren',
-    'Zapato',
-    'Luna',
-    'Pintura',
-    'Relámpago',
-    'Sol',
-    'Canción',
-    'Tierra',
+    'Butterfly',
+    'Watch',
+    'Walk',
+    'Cloud',
+    'Guitar',
+    'Green',
+    'Window',
+    'Smile',
+    'Forest',
+    'Mirror',
+    'Jump',
+    'Bird',
+    'Book',
+    'River',
+    'Star',
+    'Sand',
+    'Cat',
+    'Mountain',
+    'Fire',
+    'Hat',
+    'Spoon',
+    'Wind',
+    'Train',
+    'Shoe',
+    'Moon',
+    'Paint',
+    'Thunder',
+    'Sun',
+    'Song',
+    'Earth',
   ];
 
   @override
@@ -162,7 +163,7 @@ class _FlashCardPageState extends State<FlashCardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal,
+      backgroundColor: const Color.fromRGBO(0, 150, 136, 0.6),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -172,10 +173,11 @@ class _FlashCardPageState extends State<FlashCardPage> {
             Center(
               child: Text(
                 palabrasAleatorias[random],
-                style: const TextStyle(
-                  fontSize: 42,
+                style: GoogleFonts.pacifico(
+                  fontSize: 95,
                   fontWeight: FontWeight.w600,
                   color: Colors.white,
+                  letterSpacing: 1.5,
                 ),
               ),
             ),
