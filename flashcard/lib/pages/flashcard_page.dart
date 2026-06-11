@@ -11,44 +11,63 @@ class FlashCardPage extends StatefulWidget {
 }
 
 class _FlashCardPageState extends State<FlashCardPage> {
+  late int random;
+  late List<String> palabrasFavoritas;
+  List<String> palabrasAleatorias = [
+    'Mariposa',
+    'Reloj',
+    'Caminar',
+    'Nube',
+    'Guitarra',
+    'Azul',
+    'Ventana',
+    'Sonrisa',
+    'Bosque',
+    'Espejo',
+    'Saltar',
+    'Pájaro',
+    'Libro',
+    'Río',
+    'Estrella',
+    'Arena',
+    'Gato',
+    'Montaña',
+    'Fuego',
+    'Sombrero',
+    'Cuchara',
+    'Viento',
+    'Tren',
+    'Zapato',
+    'Luna',
+    'Pintura',
+    'Relámpago',
+    'Sol',
+    'Canción',
+    'Tierra',
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+
+    palabrasFavoritas = [];
+    random = Random().nextInt(palabrasAleatorias.length);
+  }
+
+  void _handleFavorite() {
+    String palabraActual = palabrasAleatorias[random];
+
+    setState(() {
+      if (!palabrasFavoritas.contains(palabraActual)) {
+        palabrasFavoritas.add(palabraActual);
+      }
+
+      random = Random().nextInt(palabrasAleatorias.length);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    List<String> palabrasFavoritas = [];
-    List<String> palabrasAleatorias = [
-      'Mariposa',
-      'Reloj',
-      'Caminar',
-      'Nube',
-      'Guitarra',
-      'Azul',
-      'Ventana',
-      'Sonrisa',
-      'Bosque',
-      'Espejo',
-      'Saltar',
-      'Pájaro',
-      'Libro',
-      'Río',
-      'Estrella',
-      'Arena',
-      'Gato',
-      'Montaña',
-      'Fuego',
-      'Sombrero',
-      'Cuchara',
-      'Viento',
-      'Tren',
-      'Zapato',
-      'Luna',
-      'Pintura',
-      'Relámpago',
-      'Sol',
-      'Canción',
-      'Tierra',
-    ];
-
-    int random = Random().nextInt(palabrasAleatorias.length);
-
     return Scaffold(
       backgroundColor: Colors.teal,
       body: SafeArea(
@@ -76,15 +95,7 @@ class _FlashCardPageState extends State<FlashCardPage> {
               children: [
                 ActionButton(
                   action: () {
-                    String palabraActual = palabrasAleatorias[random];
-
-                    setState(() {
-                      if (!palabrasFavoritas.contains(palabraActual)) {
-                        palabrasFavoritas.add(palabraActual);
-                      }
-
-                      random = Random().nextInt(palabrasAleatorias.length);
-                    });
+                    _handleFavorite();
                   },
                   icon: Icons.favorite,
                 ),
@@ -98,7 +109,12 @@ class _FlashCardPageState extends State<FlashCardPage> {
                   icon: Icons.refresh,
                 ),
 
-                ActionButton(action: () {}, icon: Icons.list),
+                ActionButton(
+                  action: () {
+                    print("Palabras Favoritas: $palabrasFavoritas");
+                  },
+                  icon: Icons.list,
+                ),
               ],
             ),
 
