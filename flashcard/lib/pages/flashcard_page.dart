@@ -74,7 +74,20 @@ class _FlashCardPageState extends State<FlashCardPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: 25.0,
               children: [
-                ActionButton(action: () {}, icon: Icons.favorite),
+                ActionButton(
+                  action: () {
+                    String palabraActual = palabrasAleatorias[random];
+
+                    setState(() {
+                      if (!palabrasFavoritas.contains(palabraActual)) {
+                        palabrasFavoritas.add(palabraActual);
+                      }
+
+                      random = Random().nextInt(palabrasAleatorias.length);
+                    });
+                  },
+                  icon: Icons.favorite,
+                ),
 
                 ActionButton(
                   action: () {
