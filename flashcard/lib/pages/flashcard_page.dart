@@ -60,10 +60,103 @@ class _FlashCardPageState extends State<FlashCardPage> {
     setState(() {
       if (!palabrasFavoritas.contains(palabraActual)) {
         palabrasFavoritas.add(palabraActual);
+        palabrasAleatorias.remove(palabraActual);
       }
 
       random = Random().nextInt(palabrasAleatorias.length);
     });
+  }
+
+  void _mostrarFavoritos() {
+    if (palabrasFavoritas.length >= 15) {
+      setState(() {
+        palabrasFavoritas.clear();
+      });
+    }
+
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            spacing: 20,
+            children: [
+              Center(
+                child: Container(
+                  width: 120.0,
+                  height: 5.0,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[300],
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
+
+              const Text(
+                "Mis palabras favoritas",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.teal,
+                ),
+              ),
+
+              const SizedBox(height: 24),
+
+              Expanded(
+                child: palabrasFavoritas.isEmpty
+                    ? const Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Icon(
+                              Icons.info,
+                              size: 120,
+                              color: Color(0xFCCCCCCC),
+                            ),
+
+                            SizedBox(height: 50),
+
+                            Text(
+                              'Aún no has agregado\n palabras favoritas.',
+                              style: TextStyle(
+                                color: Colors.black54,
+                                fontSize: 24,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+
+                            Spacer(),
+                          ],
+                        ),
+                      )
+                    : ListView.builder(
+                        itemCount: palabrasFavoritas.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return ListTile(
+                            leading: const Icon(
+                              Icons.favorite,
+                              color: Colors.red,
+                            ),
+                            title: Text(
+                              palabrasFavoritas[index],
+                              style: const TextStyle(
+                                fontSize: 18,
+                                color: Colors.black,
+                              ),
+                            ),
+                          );
+                        },
+                        addAutomaticKeepAlives: false,
+                      ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -94,9 +187,8 @@ class _FlashCardPageState extends State<FlashCardPage> {
               spacing: 25.0,
               children: [
                 ActionButton(
-                  action: () {
-                    _handleFavorite();
-                  },
+                  action: () =>
+                      palabrasAleatorias.isNotEmpty ? _handleFavorite() : () {},
                   icon: Icons.favorite,
                 ),
 
@@ -110,9 +202,7 @@ class _FlashCardPageState extends State<FlashCardPage> {
                 ),
 
                 ActionButton(
-                  action: () {
-                    print("Palabras Favoritas: $palabrasFavoritas");
-                  },
+                  action: () => _mostrarFavoritos(),
                   icon: Icons.list,
                 ),
               ],
