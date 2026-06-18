@@ -23,9 +23,10 @@ class App18 extends StatelessWidget {
           foregroundColor: Colors.white,
         ),
       ),
-      home: HomePage(),
+      // home: HomePage(),
       initialRoute: '/',
-      routes: <String, WidgetBuilder>{
+      routes: {
+        '/': (BuildContext context) => const HomePage(),
         '/buttons': (BuildContext context) => const ButtonsPage(),
         '/cards': (BuildContext context) => const CardsPage(),
       },

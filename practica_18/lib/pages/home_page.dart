@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:practica_18/components/menu.dart';
-import 'package:practica_18/pages/buttons_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -15,7 +14,7 @@ class HomePage extends StatelessWidget {
 }
 
 class _View extends StatelessWidget {
-  const _View({super.key});
+  const _View();
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +28,7 @@ class _View extends StatelessWidget {
           title: Text(menuItem.Title),
           subtitle: Text(menuItem.Subtitle),
           trailing: Icon(Icons.arrow_right_sharp),
-          onTap: () {
-            Navigator.pushNamed(context, menuItem.Link);
-          },
+          onTap: () => Navigator.pushNamed(context, menuItem.Link),
         );
       },
     );
