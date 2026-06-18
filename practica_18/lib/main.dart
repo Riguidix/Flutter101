@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:practica_18/pages/buttons_page.dart';
+import 'package:practica_18/pages/cards_page.dart';
+import 'package:practica_18/pages/home_page.dart';
 
 void main() {
   runApp(const App18());
@@ -10,7 +13,22 @@ class App18 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(body: Center(child: Text('Hello World!'))),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.teal,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.teal,
+          centerTitle: true,
+          foregroundColor: Colors.white,
+        ),
+      ),
+      home: HomePage(),
+      initialRoute: '/',
+      routes: <String, WidgetBuilder>{
+        '/buttons': (BuildContext context) => const ButtonsPage(),
+        '/cards': (BuildContext context) => const CardsPage(),
+      },
     );
   }
 }
