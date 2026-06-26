@@ -3,13 +3,13 @@ import 'package:practica_18/components/go_back.dart';
 import 'package:practica_18/components/house_card.dart';
 import 'package:practica_18/data/houses.dart';
 
-class CardsPage extends StatelessWidget {
-  const CardsPage({super.key});
+class HousesPage extends StatelessWidget {
+  const HousesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Tarjetas")),
+      appBar: AppBar(title: Text("Venta de Casas")),
       body: _View(),
       floatingActionButton: GoBackBtn(),
     );
@@ -17,7 +17,7 @@ class CardsPage extends StatelessWidget {
 }
 
 class _View extends StatelessWidget {
-  const _View({super.key});
+  const _View();
 
   @override
   Widget build(BuildContext context) {

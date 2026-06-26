@@ -79,7 +79,7 @@ class _View extends StatelessWidget {
 }
 
 class _CustomBtn extends StatelessWidget {
-  const _CustomBtn({super.key});
+  const _CustomBtn();
 
   @override
   Widget build(BuildContext context) {

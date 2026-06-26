@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practica_18/components/menu.dart';
+import 'package:practica_18/data/menu.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:practica_18/pages/buttons_page.dart';
 import 'package:practica_18/pages/cards_page.dart';
+import 'package:practica_18/pages/cars_page.dart';
 import 'package:practica_18/pages/home_page.dart';
+import 'package:practica_18/pages/houses_page.dart';
 
 void main() {
   runApp(const App18());
@@ -29,6 +31,8 @@ class App18 extends StatelessWidget {
         '/': (BuildContext context) => const HomePage(),
         '/buttons': (BuildContext context) => const ButtonsPage(),
         '/cards': (BuildContext context) => const CardsPage(),
+        '/houses': (BuildContext context) => const HousesPage(),
+        '/cars': (BuildContext context) => const CarsPage(),
       },
     );
   }

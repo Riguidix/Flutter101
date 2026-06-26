@@ -27,5 +27,19 @@ class Menu {
       Link: "/cards",
       Icon: Icons.card_membership,
     ),
+
+    Menu(
+      Title: "Tarjetas de Casas",
+      Subtitle: "Práctica de Cards para venta de casas",
+      Link: "/houses",
+      Icon: Icons.house_sharp,
+    ),
+
+    Menu(
+      Title: "Tarjetas de Autos",
+      Subtitle: "Práctica de Cards para venta de automoviles",
+      Link: "/cars",
+      Icon: Icons.car_rental_outlined,
+    ),
   ];
 }
