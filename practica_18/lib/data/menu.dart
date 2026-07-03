@@ -41,5 +41,19 @@ class Menu {
       Link: "/cars",
       Icon: Icons.car_rental_outlined,
     ),
+
+    Menu(
+      Title: "Progress Bar",
+      Subtitle: "Generales y controlados",
+      Link: "/progress",
+      Icon: Icons.refresh_rounded,
+    ),
+
+    Menu(
+      Title: "Controles UI",
+      Subtitle: "Uso de controles de UI",
+      Link: "/controls",
+      Icon: Icons.control_point,
+    ),
   ];
 }
