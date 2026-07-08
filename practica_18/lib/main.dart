@@ -5,6 +5,7 @@ import 'package:practica_18/pages/cars_page.dart';
 import 'package:practica_18/pages/controls_page.dart';
 import 'package:practica_18/pages/home_page.dart';
 import 'package:practica_18/pages/houses_page.dart';
+import 'package:practica_18/pages/infinite_scroll_page.dart';
 import 'package:practica_18/pages/progress_page.dart';
 
 void main() {
@@ -37,6 +38,7 @@ class App18 extends StatelessWidget {
         '/cars': (BuildContext context) => const CarsPage(),
         '/progress': (BuildContext context) => const ProgressPage(),
         '/controls': (BuildContext context) => const ControlsPage(),
+        '/infinite': (BuildContext context) => const InfinitePage(),
       },
     );
   }

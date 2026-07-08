@@ -55,5 +55,12 @@ class Menu {
       Link: "/controls",
       Icon: Icons.control_point,
     ),
+
+    Menu(
+      Title: "Infinite Scroll",
+      Subtitle: "Uso de cards por scroll infinito",
+      Link: "/infinite",
+      Icon: Icons.list_alt_rounded,
+    ),
   ];
 }
