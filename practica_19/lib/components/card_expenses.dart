@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 import 'package:practica_19/data/expenses.dart';
 
@@ -11,12 +10,6 @@ class CardExpenses extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadiusGeometry.circular(10),
-      ),
-      margin: EdgeInsets.all(15),
-      color: Theme.of(context).primaryColor,
-      elevation: 10.0,
       child: Padding(
         padding: EdgeInsetsGeometry.all(20),
         child: Column(
